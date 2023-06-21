@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   
+    <title>Document</title>
+</head>
+<body>
+    <script>
+function Nopassengers() {
+    //-------------PASSENGERS CALCULATION-----------------
+    var fare= 1200;
+    var psfees=document.getElementById('nop').value;
+    document.getElementById('nopresult').innerHTML="AMOUNT:"+psfees*fare;
+    document.getElementById('nopresult').style.color="red";
+}
+//------------------CREDIT & DEBIT CARD--------------------------
+    
+function payment() {
+    
+    var decenum=document.getElementById('dc').value;
+if (decenum==""||decenum==null) {
+    document.getElementById('errmsg').innerHTML="please enter credit/debit card number";
+    document.getElementById('errmsg').style.color="red";
+    return false;
+}
+
+if(decenum.length==12||decenum.length==14){
+    
+}else{
+    document.getElementById('errmsg').innerHTML="please enter valid credit/debit card number";
+    document.getElementById('errmsg').style.color="red";
+    return false;
+}
+
+}
+    </script>
+   <center> Number of passengers: <select id="nop" onchange="Nopassengers()">
+        <option>1</option>
+        <option>2</option>
+        <option>3</option>
+        <option>4</option>
+        <option>5</option>
+        <option>6</option>
+        <option>7</option>
+        <option>8</option>
+        <option>9</option>
+        <option>10</option>
+    </select><br><br>
+   <h2>Fare:1200</h2>
+   <p id="nopresult"></p>
+  
+    DEBIT CARD & CREDIT CARD :<input type="number" id="dc" placeholder="xxxx xxxx xxxx xx" onchange="return payment()">
+    <p id="errmsg"></p>
+<a href="sucessfulpage.html"><button onclick="return payment()">proceed</button></a>
+</center>
+</body>
+</html>

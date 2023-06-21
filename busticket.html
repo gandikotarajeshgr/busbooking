@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>bus booking</title>
+    <style>
+#bkh{
+    background-color: green;
+    color: beige;
+}
+    </style>
+</head>
+<body>
+    <script>
+    var bustravels =
+   [
+    //-------------------------------hyd to others------------------------------
+    {travels:"orangebus",from:"Hyderabad",To:"Vijayawada",Ac:false,seats:"42",fare:1200,deptt:"7:00pm",aprt:"6:30am"},
+   {travels:"redbus",from:"Hyderabad",To:"Vijayawada",Ac:true,seats:"36",fare:1000,deptt:"8:30pm",aprt:"5:00am"},
+   {travels:"ramutl",from:"Hyderabad",To:"Vijayawada",Ac:false,seats:"42",fare:1100,deptt:"1:30pm",aprt:"11:30pm"},
+   {travels:"gauthamtl",from:"Hyderabad",To:"Vijayawada",Ac:true,seats:"40",fare:900,deptt:"4:30pm",aprt:"1:30am"},
+   {travels:"zoomtl",from:"Hyderabad",To:"Vijayawada",Ac:true,seats:"48",fare:800,deptt:"5:30am",aprt:"2:30pm"},
+
+    {travels:"redbus",from:"Hyderabad",To:"Vizag",Ac:false,seats:"48",fare:1200,deptt:"5:30am",aprt:"9:30pm"},
+    {travels:"redbus",from:"Hyderabad",To:"Vizag",Ac:true,seats:"42",fare:1800,deptt:"8:30pm",aprt:"5:00am"},
+   {travels:"ramutl",from:"Hyderabad",To:"Vizag",Ac:true,seats:"40",fare:1600,deptt:"1:30pm",aprt:"11:30pm"},
+   {travels:"gauthamtl",from:"Hyderabad",To:"Vizag",Ac:false,seats:"42",fare:1200,deptt:"4:30pm",aprt:"1:30am"},
+   {travels:"zoomtl",from:"Hyderabad",To:"Vizag",Ac:true,seats:"36",fare:1400,deptt:"5:30am",aprt:"2:30pm"},
+
+   {travels:"redbus",from:"Hyderabad",To:"Bangalore",Ac:false,seats:"48",fare:2000,deptt:"5:30am",aprt:"9:30pm"},
+   {travels:"ramutl",from:"Hyderabad",To:"Bangalore",Ac:true,seats:"40",fare:2600,deptt:"1:30pm",aprt:"11:30pm"},
+   {travels:"gauthamtl",from:"Hyderabad",To:"Bangalore",Ac:false,seats:"42",fare:2000,deptt:"4:30pm",aprt:"1:30am"},
+   {travels:"zoomtl",from:"Hyderabad",To:"Bangalore",Ac:true,seats:"36",fare:2400,deptt:"5:30am",aprt:"2:30pm"},
+    {travels:"abhibus",from:"Hyderabad",To:"Bangalore",Ac:true,seats:"42",fare:1200,deptt:"4:30am",aprt:"10:30pm"},
+
+    {travels:"koveritl",from:"Hyderabad",To:"Chennai",Ac:false,seats:"42",fare:1200,deptt:"7:30am",aprt:"11:30pm"},
+    {travels:"ramutl",from:"Hyderabad",To:"Chennai",Ac:true,seats:"40",fare:2600,deptt:"1:30pm",aprt:"1:30pm"},
+   {travels:"gauthamtl",from:"Hyderabad",To:"Chennai",Ac:false,seats:"42",fare:2000,deptt:"4:30pm",aprt:"1:30am"},
+   {travels:"zoomtl",from:"Hyderabad",To:"Chennai",Ac:true,seats:"36",fare:2400,deptt:"5:30am",aprt:"12:30pm"},
+    {travels:"abhibus",from:"Hyderabad",To:"Chennai",Ac:true,seats:"42",fare:1200,deptt:"4:30am",aprt:"10:30pm"},
+//-----------------------vijayawada to others-----------------------------
+    {travels:"tamiltl",from:"Vijayawada",To:"Hyderabad",Ac:false,seats:"42",fare:2000,deptt:"4:30pm",aprt:"1:30am"},
+   {travels:"chennaitl",from:"Vijayawada",To:"Hyderabad",Ac:true,seats:"36",fare:2400,deptt:"5:30am",aprt:"6:30pm"},
+    {travels:"abhibus",from:"Vijayawada",To:"Hyderabad",Ac:true,seats:"42",fare:3000,deptt:"11:30am",aprt:"11:30pm"},
+    {travels:"arjuntl",from:"Vijayawada",To:"Hyderabad",Ac:false,seats:"42",fare:1200,deptt:"5:30pm",aprt:"9:30am"},
+    {travels:"arjuntl",from:"Vijayawada",To:"Hyderabad",Ac:false,seats:"42",fare:1200,deptt:"5:30pm",aprt:"9:30am"},
+
+    {travels:"rajamoondritl",from:"Vijayawada",To:"Vizag",Ac:false,seats:"42",fare:1000,deptt:"4:30pm",aprt:"1:30am"},
+   {travels:"andhratl",from:"Vijayawada",To:"Vizag",Ac:true,seats:"36",fare:1400,deptt:"5:30am",aprt:"6:30pm"},
+    {travels:"abhibus",from:"Vijayawada",To:"Vizag",Ac:true,seats:"42",fare:900,deptt:"11:30am",aprt:"11:30pm"},
+    {travels:"godavaritl",from:"Vijayawada",To:"Vizag",Ac:false,seats:"42",fare:900,deptt:"5:30pm",aprt:"9:30am"},
+    {travels:"arjuntl",from:"Vijayawada",To:"Vizag",Ac:false,seats:"42",fare:800,deptt:"5:30pm",aprt:"9:30am"},
+
+    {travels:"redbus",from:"Vijayawada",To:"Bangalore",Ac:false,seats:"48",fare:2000,deptt:"5:30am",aprt:"9:30pm"},
+   {travels:"ramutl",from:"Vijayawada",To:"Bangalore",Ac:true,seats:"40",fare:2600,deptt:"1:30pm",aprt:"11:30pm"},
+   {travels:"gauthamtl",from:"Vijayawada",To:"Bangalore",Ac:false,seats:"42",fare:2000,deptt:"4:30pm",aprt:"1:30am"},
+   {travels:"sureshtl",from:"Vijayawada",To:"Bangalore",Ac:true,seats:"36",fare:2400,deptt:"5:30am",aprt:"2:30pm"},
+    {travels:"chinapalemtl",from:"Vijayawada",To:"Bangalore",Ac:true,seats:"42",fare:1200,deptt:"4:30am",aprt:"10:30pm"},
+
+    {travels:"koveritl",from:"Vijayawada",To:"Chennai",Ac:false,seats:"44",fare:1200,deptt:"7:30am",aprt:"11:30pm"},
+    {travels:"ramutl",from:"Vijayawada",To:"Chennai",Ac:true,seats:"40",fare:2600,deptt:"1:30pm",aprt:"1:30pm"},
+   {travels:"gauthamtl",from:"Vijayawada",To:"Chennai",Ac:false,seats:"44",fare:2000,deptt:"4:30pm",aprt:"1:30am"},
+   {travels:"zoomtl",from:"Vijayawada",To:"Chennai",Ac:true,seats:"39",fare:2400,deptt:"5:30am",aprt:"12:30pm"},
+    {travels:"abhibus",from:"Vijayawada",To:"Chennai",Ac:true,seats:"42",fare:1200,deptt:"4:30am",aprt:"10:30pm"},
+//----------------------------------Vizag to others-------------------------------------
+{travels:"tamiltl",from:"Vizag",To:"Vijayawada",Ac:false,seats:"42",fare:2000,deptt:"4:30pm",aprt:"1:30am"},
+   {travels:"chennaitl",from:"Vizag",To:"Vijayawada",Ac:true,seats:"36",fare:2400,deptt:"5:30am",aprt:"6:30pm"},
+    {travels:"abhibus",from:"Vizag",To:"Vijayawada",Ac:true,seats:"42",fare:3000,deptt:"11:30am",aprt:"11:30pm"},
+    {travels:"arjuntl",from:"Vizag",To:"Vijayawada",Ac:false,seats:"42",fare:1200,deptt:"5:30pm",aprt:"9:30am"},
+    {travels:"arjuntl",from:"Vizag",To:"Vijayawada",Ac:false,seats:"42",fare:1200,deptt:"5:30pm",aprt:"9:30am"},
+
+    {travels:"koveritl",from:"Vizag",To:"Chennai",Ac:false,seats:"42",fare:1200,deptt:"7:30am",aprt:"12:30am"},
+    {travels:"kuttitl",from:"Vizag",To:"Chennai",Ac:true,seats:"40",fare:2600,deptt:"1:30pm",aprt:"11:30pm"},
+   {travels:"tamiltl",from:"Vizag",To:"Chennai",Ac:false,seats:"42",fare:2000,deptt:"4:30pm",aprt:"1:30am"},
+   {travels:"chennaitl",from:"Vizag",To:"Chennai",Ac:true,seats:"36",fare:2400,deptt:"5:30am",aprt:"6:30pm"},
+    {travels:"happytl",from:"Vizag",To:"Chennai",Ac:true,seats:"42",fare:1200,deptt:"5:30pm",aprt:"9:30am"},
+
+    {travels:"raghavtl",from:"Vizag",To:"Bangalore",Ac:false,seats:"42",fare:1200,deptt:"7:30pm",aprt:"11:30am"},
+    {travels:"redbus",from:"Vizag",To:"Bangalore",Ac:false,seats:"48",fare:2000,deptt:"5:30am",aprt:"9:30pm"},
+   {travels:"ramutl",from:"Vizag",To:"Bangalore",Ac:true,seats:"40",fare:2600,deptt:"1:30pm",aprt:"11:30pm"},
+   {travels:"gauthamtl",from:"Vizag",To:"Bangalore",Ac:false,seats:"42",fare:2000,deptt:"4:30pm",aprt:"1:30am"},
+   {travels:"sureshtl",from:"Vizag",To:"Bangalore",Ac:true,seats:"36",fare:2400,deptt:"5:30am",aprt:"2:30pm"},
+
+    {travels:"goodtl",from:"Vizag",To:"Hyderabad",Ac:true,seats:"42",fare:1200,deptt:"7:30pm",aprt:"6:30am"},
+    {travels:"redbus",from:"Vizag",To:"Hyderabad",Ac:false,seats:"48",fare:1200,deptt:"5:30am",aprt:"9:30pm"},
+    {travels:"redbus",from:"Vizag",To:"Hyderabad",Ac:true,seats:"42",fare:1800,deptt:"8:30pm",aprt:"5:00am"},
+   {travels:"ramutl",from:"Vizag",To:"Hyderabad",Ac:true,seats:"40",fare:1600,deptt:"1:30pm",aprt:"11:30pm"},
+   {travels:"gauthamtl",from:"Vizag",To:"Hyderabad",Ac:false,seats:"42",fare:1200,deptt:"4:30pm",aprt:"1:30am"},
+//-------------------------------------bangalore to others-------------------------
+{travels:"redbus",from:"Bangalore",To:"Hyderabad",Ac:false,seats:"48",fare:2000,deptt:"5:30am",aprt:"9:30pm"},
+   {travels:"ramutl",from:"Bangalore",To:"Hyderabad",Ac:true,seats:"40",fare:2600,deptt:"1:30pm",aprt:"11:30pm"},
+   {travels:"gauthamtl",from:"Bangalore",To:"Hyderabad",Ac:false,seats:"42",fare:2000,deptt:"4:30pm",aprt:"1:30am"},
+   {travels:"zoomtl",from:"Bangalore",To:"Hyderabad",Ac:true,seats:"36",fare:2400,deptt:"5:30am",aprt:"2:30pm"},
+    {travels:"abhibus",from:"Bangalore",To:"Hyderabad",Ac:true,seats:"42",fare:1200,deptt:"4:30am",aprt:"10:30pm"},
+
+    {travels:"raghavtl",from:"Bangalore",To:"Vizag",Ac:false,seats:"42",fare:1200,deptt:"7:30pm",aprt:"11:30am"},
+    {travels:"redbus",from:"Bangalore",To:"Vizag",Ac:false,seats:"48",fare:2000,deptt:"5:30am",aprt:"9:30pm"},
+   {travels:"ramutl",from:"Bangalore",To:"Vizag",Ac:true,seats:"40",fare:2600,deptt:"1:30pm",aprt:"11:30pm"},
+   {travels:"gauthamtl",from:"Bangalore",To:"Vizag",Ac:false,seats:"42",fare:2000,deptt:"4:30pm",aprt:"1:30am"},
+   {travels:"sureshtl",from:"Bangalore",To:"Vizag",Ac:true,seats:"36",fare:2400,deptt:"5:30am",aprt:"2:30pm"},
+
+   {travels:"koveritl",from:"Bangalore",To:"Chennai",Ac:false,seats:"42",fare:1200,deptt:"7:30am",aprt:"11:30pm"},
+    {travels:"ramutl",from:"Bangalore",To:"Chennai",Ac:true,seats:"40",fare:2600,deptt:"1:30pm",aprt:"1:30pm"},
+   {travels:"gauthamtl",from:"Bangalore",To:"Chennai",Ac:false,seats:"42",fare:2000,deptt:"4:30pm",aprt:"1:30am"},
+   {travels:"zoomtl",from:"Bangalore",To:"Chennai",Ac:true,seats:"36",fare:2400,deptt:"5:30am",aprt:"12:30pm"},
+    {travels:"abhibus",from:"Bangalore",To:"Chennai",Ac:true,seats:"42",fare:1200,deptt:"4:30am",aprt:"10:30pm"},
+
+    {travels:"orangebus",from:"Bangalore",To:"Vijayawada",Ac:false,seats:"42",fare:2200,deptt:"7:00pm",aprt:"6:30am"},
+   {travels:"redbus",from:"Bangalore",To:"Vijayawada",Ac:true,seats:"36",fare:2000,deptt:"8:30pm",aprt:"5:00am"},
+   {travels:"ramutl",from:"Bangalore",To:"Vijayawada",Ac:false,seats:"42",fare:2100,deptt:"1:30pm",aprt:"11:30pm"},
+   {travels:"gauthamtl",from:"Bangalore",To:"Vijayawada",Ac:true,seats:"40",fare:1900,deptt:"4:30pm",aprt:"1:30am"},
+   {travels:"zoomtl",from:"Bangalore",To:"Vijayawada",Ac:true,seats:"48",fare:1800,deptt:"5:30am",aprt:"2:30pm"},
+   //-----------------------------------------chennai to others------------------------------------------
+   {travels:"tamiltl",from:"Chennai",To:"Hyderabad",Ac:false,seats:"42",fare:2000,deptt:"4:30pm",aprt:"1:30am"},
+   {travels:"chennaitl",from:"Chennai",To:"Hyderabad",Ac:true,seats:"36",fare:2400,deptt:"5:30am",aprt:"6:30pm"},
+    {travels:"abhibus",from:"Chennai",To:"Hyderabad",Ac:true,seats:"42",fare:3000,deptt:"11:30am",aprt:"11:30pm"},
+    {travels:"arjuntl",from:"Chennai",To:"Hyderabad",Ac:false,seats:"42",fare:1200,deptt:"5:30pm",aprt:"9:30am"},
+    {travels:"arjuntl",from:"Chennai",To:"Hyderabad",Ac:false,seats:"42",fare:1200,deptt:"5:30pm",aprt:"9:30am"},
+
+    {travels:"orangebus",from:"Chennai",To:"Vijayawada",Ac:false,seats:"42",fare:2200,deptt:"7:00pm",aprt:"6:30am"},
+   {travels:"redbus",from:"Chennai",To:"Vijayawada",Ac:true,seats:"36",fare:2000,deptt:"8:30pm",aprt:"5:00am"},
+   {travels:"ramutl",from:"Chennai",To:"Vijayawada",Ac:false,seats:"42",fare:2100,deptt:"1:30pm",aprt:"11:30pm"},
+   {travels:"gauthamtl",from:"Chennai",To:"Vijayawada",Ac:true,seats:"40",fare:1900,deptt:"4:30pm",aprt:"1:30am"},
+   {travels:"zoomtl",from:"Chennai",To:"Vijayawada",Ac:true,seats:"48",fare:1800,deptt:"5:30am",aprt:"2:30pm"},
+
+   {travels:"redbus",from:"Chennai",To:"Vizag",Ac:false,seats:"48",fare:1200,deptt:"5:30am",aprt:"9:30pm"},
+    {travels:"redbus",from:"Chennai",To:"Vizag",Ac:true,seats:"42",fare:1800,deptt:"8:30pm",aprt:"5:00am"},
+   {travels:"ramutl",from:"Chennai",To:"Vizag",Ac:true,seats:"40",fare:1600,deptt:"1:30pm",aprt:"11:30pm"},
+   {travels:"gauthamtl",from:"Chennai",To:"Vizag",Ac:false,seats:"42",fare:1200,deptt:"4:30pm",aprt:"1:30am"},
+   {travels:"zoomtl",from:"Chennai",To:"Vizag",Ac:true,seats:"36",fare:1400,deptt:"5:30am",aprt:"2:30pm"},
+
+   {travels:"orangebus",from:"Chennai",To:"VBangalore",Ac:false,seats:"42",fare:2200,deptt:"7:00pm",aprt:"6:30am"},
+   {travels:"redbus",from:"Chennai",To:"Bangalore",Ac:true,seats:"36",fare:2000,deptt:"8:30pm",aprt:"5:00am"},
+   {travels:"ramutl",from:"Chennai",To:"Bangalore",Ac:false,seats:"42",fare:2100,deptt:"1:30pm",aprt:"11:30pm"},
+   {travels:"gauthamtl",from:"Chennai",To:"Bangalore",Ac:true,seats:"40",fare:1900,deptt:"4:30pm",aprt:"1:30am"},
+   {travels:"zoomtl",from:"Chennai",To:"Bangalore",Ac:true,seats:"48",fare:1800,deptt:"5:30am",aprt:"2:30pm"},
+
+   ]
+function Busbooking() {
+    var frbus= document.getElementById("frombus").value;
+    var tbus = document.getElementById("tobus").value;
+    var busbk=""
+    busbk=busbk+"<table border='1px'cellspacing='0'width='700'>"+"<tr id='clr'>"+"<th>"+"TRAVELS"+"</th>"+"<th>"+"FROM"+"</th>"+"<th>"+"TO"+"</th>"+
+              "<th>"+"AC"+"</th>"+"<th>"+"SEATS"+"</th>"+"<th>"+"FARE"+"</th>"+"<th>"+"DEPT.TIME"+"</th>"+"<th>"+"ARR.TIME"+"</th>"+"<th>"+"BUS BOOKING"+"</th>"+"</tr>";
+              for (let  a= 0;  a< bustravels.length; a++) {
+                    if (bustravels[a].from==frbus&&bustravels[a].To==tbus) {
+                        if (bustravels[a].Ac==false) {
+                            i="Ac"
+                            }else{
+                                i="Non-Ac"
+                            }
+                        busbk=busbk+"<tr>"+"<td>"+bustravels[a].travels+"</td>"+"<td>"+bustravels[a].from+"</td>"+"<td>"+bustravels[a].To+"</td>"+
+                            "<td>"+i+"</td>"+"<td>"+bustravels[a].seats+"</td>"+"<td>"+bustravels[a].fare+"</td>"+ "<td>"+bustravels[a].deptt+"</td>"+
+                            "<td>"+bustravels[a].aprt+"</td>"+"<td>"+"<a href='afterbooking.html'>"+"<button id='bkh'>"+"Book now"+"</button>"+"</a>"+"</td>"+"</tr>";
+                    }   
+                
+              }
+              busbk=busbk+"</table>" ;
+              document.getElementById('results').innerHTML=busbk;
+              document.getElementById('clr').style.color="white";
+              document.getElementById('clr').style.backgroundColor="black";
+            //   document.getElementById('bkh').style.backgroundColor="green";
+            //   document.getElementById('bkh').style.color="white";
+}
+    </script>
+    <center>
+
+<select placeholder="from" id="frombus">
+    <option >Hyderabad</option>
+    <option >Vijayawada</option>
+    <option >Chennai</option>
+    <option >Vizag</option>
+    <option >Bangalore</option>
+</select>
+<select  placeholder="To" id="tobus">
+    <option >Hyderabad</option>
+    <option >Vijayawada</option>
+    <option >Chennai</option>
+    <option >Vizag</option>
+    <option >Bangalore</option>
+</select>
+<input type="date">
+<button onclick="Busbooking()">search bus</button></a>
+<p id="results"></p>
+</center>
+</body>
+</html>
